@@ -12,7 +12,7 @@ class TodoView():
                -c   Completes an task")
 
     def print_list(self, dict_list):
-        for i in range(len(dict_list):
+        for i in range(len(dict_list)):
             task = dict_list[i]["name"]
             check = "x" if dict_list[i]["checked"] else " "
             print(i + " - [" + check + "] " + task)
