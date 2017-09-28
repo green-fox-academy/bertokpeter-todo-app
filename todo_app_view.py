@@ -15,4 +15,4 @@ class TodoView():
         for i in range(len(dict_list)):
             task = dict_list[i]["name"]
             check = "x" if dict_list[i]["checked"] else " "
-            print(i + " - [" + check + "] " + task)
+            print(str(i+1) + " - [" + check + "] " + task)
