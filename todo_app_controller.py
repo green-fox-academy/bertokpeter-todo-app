@@ -33,6 +33,8 @@ class TodoController():
                     print("Unable to remove: index out of bound")
                 else:
                     print("Unable to remove: no index provided")
+            except ValueError:
+                print("Unable to remove: index is not a number")
         elif self.arg == "-c":
             self.check(sys.argv[2])
         else:
