@@ -29,13 +29,14 @@ class TodoController():
 
     def add(self, task):
         with open("todos.txt", "a") as self.file:
-            self.file.write(task + "\n")
+            self.file.write("0 " + task + "\n")
     
     def remove(self, index):
         self.model.todo_list.remove(self.model.todo_list[int(index)-1])
         with open("todos.txt", "w") as self.file:
             for element in self.model.todo_list:
-                self.file.write(element["name"] + "\n")
+                one = "1" if element["checked"] else "0"
+                self.file.write(one + " " + element["name"] + "\n")
 
 
 todo = TodoController()
