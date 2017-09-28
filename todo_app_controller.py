@@ -36,7 +36,15 @@ class TodoController():
             except ValueError:
                 print("Unable to remove: index is not a number")
         elif self.arg == "-c":
-            self.check(sys.argv[2])
+            try:
+                self.check(sys.argv[2])
+            except IndexError:
+                if len(sys.argv) > 2:
+                    print("Unable to check: index out of bound")
+                else:
+                    print("Unable to check: no index provided")
+            except ValueError:
+                print("Unable to remove: index is not a number")
         else:
             self.view.arg_error()
 
