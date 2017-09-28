@@ -1,8 +1,10 @@
 class TodoModel():
 
     def __init__(self):
-        self.todo_file = open(todos.txt, "r")
         self.todo_list = []
-        for line in self.todo_file:
-            self.todo_list.append(line)
-        self.todo_file.close()        
+        with open("bertokpeter-todo-app/todos.txt", "r") as self.todo_file:
+            for line in self.todo_file:
+                self.todo_list.append({"checked": False, "name": line.rstrip("\n")})
+            print(self.todo_list)       
+
+todo = TodoModel()
