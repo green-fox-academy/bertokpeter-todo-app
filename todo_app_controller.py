@@ -24,6 +24,8 @@ class TodoController():
             self.add(sys.argv[2])
         elif self.arg == "-r":
             self.remove(sys.argv[2])
+        elif self.arg == "-c":
+            self.check(sys.argv[2])
         else:
             self.view.arg_error()
 
@@ -35,5 +37,8 @@ class TodoController():
         self.model.todo_list.remove(self.model.todo_list[int(index)-1])
         self.model.write()
 
+    def check(self, index):
+        self.model.todo_list[int(index)-1]["checked"] = True
+        self.model.write()
 
 todo = TodoController()
