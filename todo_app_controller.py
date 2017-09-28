@@ -26,7 +26,10 @@ class TodoController():
             except IndexError:
                 print("Unable to add: no task provided")
         elif self.arg == "-r":
-            self.remove(sys.argv[2])
+            try:
+                self.remove(sys.argv[2])
+            except IndexError:
+                print("Unable to remove: no index provided")
         elif self.arg == "-c":
             self.check(sys.argv[2])
         else:
