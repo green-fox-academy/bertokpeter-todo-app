@@ -21,7 +21,10 @@ class TodoController():
         elif self.arg == "-l":
             self.view.print_list(self.model.todo_list)
         elif self.arg == "-a":
-            self.add(sys.argv[2])
+            try:
+                self.add(sys.argv[2])
+            except IndexError:
+                print("Unable to add: no task provided")
         elif self.arg == "-r":
             self.remove(sys.argv[2])
         elif self.arg == "-c":
