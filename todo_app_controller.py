@@ -1,7 +1,7 @@
 import sys
 from todo_app_view import TodoView
 
-class TodoController():
+class TodoController(TodoView):
     
     def __init__(self):
         self.user_command()
@@ -13,6 +13,6 @@ class TodoController():
 
     def user_command(self):
         if self.get_arguments() == None:
-            print("jujj")
+            self.print_usage()
 
 todo = TodoController()
