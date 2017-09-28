@@ -18,3 +18,7 @@ class TodoView():
             task = dict_list[i]["name"]
             check = "x" if dict_list[i]["checked"] else " "
             print(str(i+1) + " - [" + check + "] " + task)
+
+    def arg_error(self):
+        print("Unsupported argument")
+        self.print_usage()
