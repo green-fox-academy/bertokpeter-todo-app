@@ -12,6 +12,8 @@ class TodoView():
                -c   Completes an task")
 
     def print_list(self, dict_list):
+        if len(dict_list) == 0:
+            print("No todos for today! :)")
         for i in range(len(dict_list)):
             task = dict_list[i]["name"]
             check = "x" if dict_list[i]["checked"] else " "
