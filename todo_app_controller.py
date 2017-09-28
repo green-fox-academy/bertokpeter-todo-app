@@ -18,8 +18,9 @@ class TodoController():
         self.arg = self.get_arguments()
         if self.arg == None:
             self.view.print_usage()
-        elif self.arg == "-l":
-            self.view.print_list(self.model.todo_list)
+        elif self.arg == "-l" or self.arg == "-la":
+            self.list_all = self.arg == "-la"
+            self.view.print_list(self.model.todo_list, self.list_all)
         elif self.arg == "-a":
             try:
                 self.add(sys.argv[2])
