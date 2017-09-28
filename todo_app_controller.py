@@ -25,7 +25,7 @@ class TodoController():
 
     def add(self, task):
         with open("todos.txt", "a") as self.file:
-            self.file.write(task)
+            self.file.write(task + "\n")
     
 
 
