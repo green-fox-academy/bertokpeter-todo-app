@@ -14,9 +14,7 @@ class TodoView():
 
     def print_list(self, dict_list, list_all):
         if not list_all:
-            for i in dict_list:
-                if i["checked"]:
-                    dict_list.remove(i)
+            dict_list = [elem for elem in dict_list if not elem["checked"]]
         if len(dict_list) == 0:
             print("No todos for today! :)")
         for i in range(len(dict_list)):
