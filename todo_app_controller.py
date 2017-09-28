@@ -18,6 +18,9 @@ class TodoController():
         self.arg = self.get_arguments()
         if self.arg == None:
             self.view.print_usage()
+        elif self.arg == "-l":
+            self.view.print_list(self.model.todo_list)
+    
 
 
 todo = TodoController()
