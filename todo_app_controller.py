@@ -29,7 +29,10 @@ class TodoController():
             try:
                 self.remove(sys.argv[2])
             except IndexError:
-                print("Unable to remove: no index provided")
+                if len(sys.argv) > 2:
+                    print("Unable to remove: index out of bound")
+                else:
+                    print("Unable to remove: no index provided")
         elif self.arg == "-c":
             self.check(sys.argv[2])
         else:
