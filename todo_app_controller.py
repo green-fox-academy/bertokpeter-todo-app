@@ -24,6 +24,8 @@ class TodoController():
             self.add(sys.argv[2])
         elif self.arg == "-r":
             self.remove(sys.argv[2])
+        else:
+            self.view.arg_error()
 
     def add(self, task):
         with open("todos.txt", "a") as self.file:
