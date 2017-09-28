@@ -21,10 +21,10 @@ class TodoView():
         for i in range(len(original_list)):
             task = original_list[i]["name"]
             check = "x" if original_list[i]["checked"] else " "
-            if list_all:
+            if not list_all and original_list[i]["checked"]:
+                pass
+            else:
                 print(str(i+1) + " - [" + check + "] " + task)
-            elif not original_list[i]["checked"]:
-                print(str(i+1) + " - [ ] " + task)
                 
     def arg_error(self):
         print("Unsupported argument")
