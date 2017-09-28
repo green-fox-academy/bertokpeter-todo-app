@@ -1,9 +1,12 @@
 import sys
 from todo_app_view import TodoView
+from todo_app_model import TodoModel
 
-class TodoController(TodoView):
+class TodoController():
     
     def __init__(self):
+        self.view = TodoView()
+        self.model = TodoModel()
         self.user_command()
     
     def get_arguments(self):
@@ -12,7 +15,9 @@ class TodoController(TodoView):
         return None
 
     def user_command(self):
-        if self.get_arguments() == None:
-            self.print_usage()
+        self.arg = self.get_arguments()
+        if self.arg == None:
+            self.view.print_usage()
+
 
 todo = TodoController()
