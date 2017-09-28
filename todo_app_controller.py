@@ -22,11 +22,18 @@ class TodoController():
             self.view.print_list(self.model.todo_list)
         elif self.arg == "-a":
             self.add(sys.argv[2])
+        elif self.arg == "-r":
+            self.remove(sys.argv[2])
 
     def add(self, task):
         with open("todos.txt", "a") as self.file:
             self.file.write(task + "\n")
     
+    def remove(self, index):
+        self.model.todo_list.remove(self.model.todo_list[index-1])
+        with open("todos.txt", "w") as self.file:
+            for element in self.model.todo_list:
+                self.file.write(element["name"] + "\n")
 
 
 todo = TodoController()
