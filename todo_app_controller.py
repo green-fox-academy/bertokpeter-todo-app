@@ -33,10 +33,7 @@ class TodoController():
     
     def remove(self, index):
         self.model.todo_list.remove(self.model.todo_list[int(index)-1])
-        with open("todos.txt", "w") as self.file:
-            for element in self.model.todo_list:
-                one = "1" if element["checked"] else "0"
-                self.file.write(one + " " + element["name"] + "\n")
+        self.model.write()
 
 
 todo = TodoController()
