@@ -20,6 +20,11 @@ class TodoController():
             self.view.print_usage()
         elif self.arg == "-l":
             self.view.print_list(self.model.todo_list)
+        elif self.arg == "-a":
+
+    def add(self, task):
+        with open("todos.txt", "a") as self.file:
+            self.file.write(task)
     
 
 
