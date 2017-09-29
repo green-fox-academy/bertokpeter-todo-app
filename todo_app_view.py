@@ -13,17 +13,15 @@ class TodoView():
                -c    Completes an task")
 
     def print_list(self, dict_list, list_all):
-        original_list = dict_list
+        what_to_print = dict_list
         if not list_all:
-            dict_list = [elem for elem in dict_list if not elem["checked"]]
-        if len(dict_list) == 0:
+            what_to_print = [elem for elem in dict_list if not elem["checked"]]
+        if len(what_to_print) == 0:
             print("No todos for today! :)")
-        for i in range(len(original_list)):
-            task = original_list[i]["name"]
-            check = "x" if original_list[i]["checked"] else " "
-            if not list_all and original_list[i]["checked"]:
-                pass
-            else:
+        for i in range(len(dict_list)):
+            task = dict_list[i]["name"]
+            check = "x" if dict_list[i]["checked"] else " "
+            if list_all or (not list_all and not dict_list[i]["checked"]):
                 print(str(i+1) + " - [" + check + "] " + task)
                 
     def arg_error(self):
