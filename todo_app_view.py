@@ -9,8 +9,8 @@ class TodoView():
                -l    Lists undone tasks\n\
                -la   Lists all the tasks\n\
                -a    Adds a new task\n\
-               -r    Removes an task\n\
-               -c    Completes an task")
+               -r    Removes a task\n\
+               -c    Completes a task")
 
     def print_list(self, dict_list, list_all):
         what_to_print = dict_list
